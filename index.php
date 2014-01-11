@@ -5,6 +5,7 @@
  *
  * @package vietmoz base
  * @since vietmoz base 1.0
+ * @author Vietmoz Team
  */
 
 get_header(); ?>
