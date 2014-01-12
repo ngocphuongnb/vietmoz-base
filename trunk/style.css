@@ -35,11 +35,8 @@ html {
 *,
 *:before,
 *:after {
-  /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
   -webkit-box-sizing: border-box;
-  /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
   -moz-box-sizing: border-box;
-  /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
   box-sizing: border-box;
 }
 
@@ -104,6 +101,7 @@ a {
 }
 a:hover, a:active {
   text-decoration: underline;
+  outline: 0;
 }
 a:focus {
   outline: thin dotted;
@@ -112,15 +110,6 @@ a img {
   border: 0;
 }
 
-a:hover,
-a:active, button, input[type="submit"] {
+button, input[type="submit"] {
   outline: 0;
-}
-
-.class {
-  -webkit-border-radius: 4px 5px 10px 5px;
-  -moz-border-radius: 4px 5px 10px 5px;
-  -ms-border-radius: 4px 5px 10px 5px;
-  -o-border-radius: 4px 5px 10px 5px;
-  border-radius: 4px 5px 10px 5px;
 }

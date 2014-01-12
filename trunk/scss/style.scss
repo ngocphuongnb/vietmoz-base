@@ -19,12 +19,17 @@ $text-color: #222;
 $link-color: #0066cc;
 $bg-color: #fafafa;
 //------Mixin
-@mixin border-radius($top, $right, $bottom, $left) {
-  -webkit-border-radius: $top $right $bottom $left;
-     -moz-border-radius: $top $right $bottom $left;
-      -ms-border-radius: $top $right $bottom $left;
-       -o-border-radius: $top $right $bottom $left;
-          border-radius: $top $right $bottom $left;
+@mixin border-radius($border-radius: 5px) {
+  -webkit-border-radius: $border-radius;
+     -moz-border-radius: $border-radius;
+      -ms-border-radius: $border-radius;
+       -o-border-radius: $border-radius;
+          border-radius: $border-radius;
+}
+@mixin box-sizing($box-sizing: border-box) {
+-webkit-box-sizing: $box-sizing;
+-moz-box-sizing: $box-sizing;
+box-sizing: $box-sizing;
 }
 //------Start the magic
 /* RESET */
@@ -46,10 +51,8 @@ html {
 }
 *,
 *:before,
-*:after { /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
-	-webkit-box-sizing: border-box; /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
-	-moz-box-sizing:    border-box; /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
-	box-sizing:         border-box;
+*:after {
+	@include box-sizing;
 }
 body {
 	background: $bg-color;
@@ -102,7 +105,8 @@ a {
 	color: $link-color;
 	text-decoration: none;
 	&:hover, &:active {
-		text-decoration: underline
+		text-decoration: underline;
+		outline: 0;
 	}
 	&:focus {
 		outline: thin dotted;
@@ -111,10 +115,6 @@ a {
 		border: 0;
 	}
 }
-a:hover,
-a:active, button, input[type="submit"]  {
+button, input[type="submit"]  {
 	outline: 0;
-}
-.class {
-	@include border-radius(4px, 5px, 10px, 5px)
 }
