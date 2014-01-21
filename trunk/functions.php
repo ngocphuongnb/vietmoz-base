@@ -7,6 +7,13 @@
  * @package VietMoz Base
  * @since VietMoz Base 1.0
  */
+  
+ /**
+  * Including Other Files
+  */
+ include 'inc/widgets/image/image.php';
+ 
+ 
 if (! function_exists('vmzwp_setup') ) :
 	/*
 	* Setup the theme and register menu, feed, post format.
@@ -52,3 +59,21 @@ function vmzwp_enqueue() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'vmzwp_enqueue' );
+
+
+function vmz_register_script()
+{
+	wp_register_script( 'js', get_template_directory_uri().'/inc/vmz.js', array('jquery','media-upload','thickbox') );  
+	
+    wp_enqueue_media();  
+    
+	wp_enqueue_script('jquery');  
+
+	wp_enqueue_script('thickbox');  
+	wp_enqueue_style('thickbox');  
+
+	wp_enqueue_script('media-upload');  
+	wp_enqueue_script('js');
+}
+add_action('admin_enqueue_scripts', 'vmz_register_script');
+	
