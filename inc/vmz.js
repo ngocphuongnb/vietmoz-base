@@ -40,11 +40,11 @@ jQuery(document).ready(function($) {
     $("#theme-options-feedback").fadeOut(3000);
     
 	$("#hcv-nav li").live('click',function(){
-        $("#hcv-nav li").removeClass("active");
-        $(this).addClass("active");
 		var a = $(this).attr("id");
 		$(".option").css("display","none");
 		$("." + a).slideDown();
+		$("#hcv-nav li").removeClass("active");
+		$(this).addClass("active");
 	});
     
     
