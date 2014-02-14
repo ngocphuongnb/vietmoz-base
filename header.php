@@ -47,28 +47,33 @@
 	</div><!-- #top-nav -->
     <?php endif; ?>
 	<div id="site-header">
-		<div class="logo left">
-			<h1 class="site-title">
-				<a href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<?php //display logo as option ?>
-				</a>
-			</h1>
-			<?php if($vmzData['site_slogan']): ?>
-			<div class="site-slogan">
-				<span><?php echo $vmzData['site_slogan']; ?></span>
-			</div><!-- .site-slogan -->
-			<?php endif; ?>
-		</div><!-- .logo.left -->
-        <?php if ( is_active_sidebar( 'header_sidebar' ) ) : ?>
-		<div class="right header-sidebar">
-			<?php dynamic_sidebar( 'header_sidebar' ); ?>
-		</div><!-- .right.header-sidebar -->
-        <?php endif; ?>
+		<div class="wrap">
+			<div class="logo left">
+				<h1 class="site-title">
+					<a href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+						<?php //display logo as option ?>
+					</a>
+				</h1>
+				<?php if($vmzData['site_slogan']): ?>
+				<div class="site-slogan">
+					<span><?php echo $vmzData['site_slogan']; ?></span>
+				</div><!-- .site-slogan -->
+				<?php endif; ?>
+			</div><!-- .logo.left -->
+	        <?php if ( is_active_sidebar( 'header_sidebar' ) ) : ?>
+			<div class="right header-sidebar">
+				<?php dynamic_sidebar( 'header_sidebar' ); ?>
+			</div><!-- .right.header-sidebar -->
+	        <?php endif; ?>
+	    </div><!-- .wrap -->
 	</div><!-- #masthead -->
     <?php if ( is_active_sidebar( 'main_menu' ) ) : ?>
 	<nav id="site-nav" class="main-nav">
-		<?php dynamic_sidebar('main_menu'); ?>  
+		<div class="wrap">
+			<?php dynamic_sidebar('main_menu'); ?>
+		</div><!-- .wrap -->
 	</nav><!-- #site-nav.main-nav -->
     <?php endif; ?>
 </header><!-- #site-header -->
 <main>
+	<div class="wrap">

@@ -1,3 +1,4 @@
+	</div><!-- .wrap -->
 </main>
 <footer id="colophon">
 	<div class="footer-row footer-row-1">
