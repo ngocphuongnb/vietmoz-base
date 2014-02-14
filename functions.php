@@ -95,7 +95,32 @@ function vmz_register_script()
 	wp_enqueue_script('media-upload');  
 	wp_enqueue_script('js');
 }
-add_action('admin_enqueue_scripts', 'vmz_register_script');/**
+add_action('admin_enqueue_scripts', 'vmz_register_script');
+
+function my_login_logo() { ?>
+    <style type="text/css">
+        body{
+            background: url(<?php echo get_stylesheet_directory_uri(); ?>/img/bg-login.png)!important;
+            background-size:100% 100%!important;
+        }
+        body.login div#login h1 a {
+            width:300px;
+            height:80px;
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png);
+            padding-bottom: 30px;
+            background-size:300px 80px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+function my_login_logo_url() {
+    return 'http://thietkeweb.vietmoz.com';
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+
+/**
  * Set the content width for image, prevent large image 
  *
  * @since Shape 1.0
