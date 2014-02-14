@@ -58,9 +58,6 @@ function vmzwp_enqueue() {
         wp_enqueue_script( 'comment-reply' );
     }
 }
-add_action( 'wp_enqueue_scripts', 'vmzwp_enqueue' );
-
-
 function vmz_register_script()
 {
 	wp_register_script( 'js', get_template_directory_uri().'/inc/vmz.js', array('jquery','media-upload','thickbox') );  
@@ -75,5 +72,10 @@ function vmz_register_script()
 	wp_enqueue_script('media-upload');  
 	wp_enqueue_script('js');
 }
-add_action('admin_enqueue_scripts', 'vmz_register_script');
-	
+add_action('admin_enqueue_scripts', 'vmz_register_script');/**
+ * Set the content width for image, prevent large image 
+ *
+ * @since Shape 1.0
+ */
+if ( ! isset( $content_width ) )
+    $content_width = 1366; /* pixels */
