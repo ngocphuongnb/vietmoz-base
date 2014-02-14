@@ -53,6 +53,8 @@ register_sidebar(array(
   'name' => __( 'VietMoz Main sidebar' ),
   'id' => 'sidebar-1',
   'description' => __( 'Aside area.' ),
+  'before_widget' => '<aside id="%1$s" class="main-widget widget %2$s">',
+  'after_widget'  => '</aside>',
   'before_title' => '<h2>',
   'after_title' => '</h2>'
 ));
@@ -69,6 +71,55 @@ register_sidebar(array(
   'description' => __( 'Top right widgets area.' ),
   'before_title' => '',
   'after_title' => ''
+));
+register_sidebar(array(
+  'name' => __( 'VietMoz Header - Banner sidebar' ),
+  'id' => 'header_sidebar',
+  'description' => __( 'Header - Banner widgets area.' ),
+  'before_title' => '',
+  'after_title' => ''
+));
+register_sidebar(array(
+  'name' => __( 'VietMoz Main menu' ),
+  'id' => 'main_menu',
+  'description' => __( 'Main menu area.' ),
+  'before_title' => '',
+  'after_title' => ''
+));
+register_sidebar(array(
+  'name' => __( 'VietMoz Main menu' ),
+  'id' => 'main_menu',
+  'description' => __( 'Main menu area.' ),
+  'before_title' => '',
+  'after_title' => ''
+));
+register_sidebar(array(
+  'name' => __( 'Home Widget row 1' ),
+  'id' => 'home-1',
+  'description' => __( 'Home Widget row 1.' ),
+  'before_title' => '<h2>',
+  'after_title' => '</h2>'
+));
+register_sidebar(array(
+  'name' => __( 'Home Widget row 2' ),
+  'id' => 'home-2',
+  'description' => __( 'Home Widget row 2.' ),
+  'before_title' => '<h2>',
+  'after_title' => '</h2>'
+));
+register_sidebar(array(
+  'name' => __( 'Home Widget row 3' ),
+  'id' => 'home-3',
+  'description' => __( 'Home Widget row 3.' ),
+  'before_title' => '<h2>',
+  'after_title' => '</h2>'
+));
+register_sidebar(array(
+  'name' => __( 'Home Widget row 4' ),
+  'id' => 'home-4',
+  'description' => __( 'Home Widget row 4.' ),
+  'before_title' => '<h2>',
+  'after_title' => '</h2>'
 ));
 
 /**
