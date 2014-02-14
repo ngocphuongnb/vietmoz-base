@@ -48,6 +48,29 @@ function vmzwp_setup() {
 }
 endif; //vmz_setup
 add_action( 'after_setup_theme', 'vmzwp_setup' );
+/* Register sidebar */
+register_sidebar(array(
+  'name' => __( 'Main sidebar' ),
+  'id' => 'sidebar-1',
+  'description' => __( 'Aside area.' ),
+  'before_title' => '<h2>',
+  'after_title' => '</h2>'
+));
+register_sidebar(array(
+  'name' => __( 'Top left sidebar' ),
+  'id' => 'top_nav_left',
+  'description' => __( 'Top left widgets area.' ),
+  'before_title' => '',
+  'after_title' => ''
+));
+register_sidebar(array(
+  'name' => __( 'Top right sidebar' ),
+  'id' => 'top_nav_right',
+  'description' => __( 'Top right widgets area.' ),
+  'before_title' => '',
+  'after_title' => ''
+));
+
 /**
 * Enqueue Script and Style
 */
