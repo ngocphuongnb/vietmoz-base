@@ -28,5 +28,6 @@
 	</div>
 </footer>
 <?php //Code to insert Google Analytics ?>
+<?php wp_footer(); ?>
 </body>
 </html>
