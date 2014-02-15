@@ -118,6 +118,10 @@ a {
 button, input[type="submit"]  {
 	outline: 0;
 }
+.wrap {
+	width: $wrap-width;
+	margin: 0 auto;
+}
 /* =Header */
 header {
 	background: #ccc;

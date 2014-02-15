@@ -26,7 +26,7 @@
 		 function widget($args,$instance)
 		 {
 			extract($args);
-			echo $this->id; 
+			//echo $this->id; 
 		?>
             
 			<div id="<?php echo $this->id; ?>" class="wrap-widget-image">
