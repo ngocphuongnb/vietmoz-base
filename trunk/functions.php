@@ -7,22 +7,22 @@
  * @package VietMoz Base
  * @since VietMoz Base 1.0
  */
-  
- /**
-  * Including Other Files
-  */
- include 'inc/widgets/image/image.php';
- 
+
+/**
+* Including Other Files
+*/
+include 'inc/widgets/image/image.php';
+include 'inc/register_sidebars.php';
  
 if (! function_exists('vmzwp_setup') ) :
-	/*
-	* Setup the theme and register menu, feed, post format.
-	*
-	* @package VietMoz Base
-	* @since VietMoz Base 1.0
-	*/
+  /*
+  * Setup the theme and register menu, feed, post format.
+  *
+  * @package VietMoz Base
+  * @since VietMoz Base 1.0
+  */
 function vmzwp_setup() {
-	/**
+  /**
      * Custom template tags for this theme.
      */
     require( get_template_directory() . '/inc/template-tags.php' );
@@ -48,144 +48,29 @@ function vmzwp_setup() {
 }
 endif; //vmz_setup
 add_action( 'after_setup_theme', 'vmzwp_setup' );
-/* Register sidebar */
-register_sidebar(array(
-  'name' => __( 'VietMoz Main sidebar' ),
-  'id' => 'sidebar-1',
-  'description' => __( 'Aside area.' ),
-  'before_widget' => '<aside id="%1$s" class="main-widget widget %2$s">',
-  'after_widget'  => '</aside>',
-  'before_title' => '<h2>',
-  'after_title' => '</h2>'
-));
-register_sidebar(array(
-  'name' => __( 'VietMoz Top left sidebar' ),
-  'id' => 'top_nav_left',
-  'description' => __( 'Top left widgets area.' ),
-  'before_title' => '',
-  'after_title' => ''
-));
-register_sidebar(array(
-  'name' => __( 'VietMoz Top right sidebar' ),
-  'id' => 'top_nav_right',
-  'description' => __( 'Top right widgets area.' ),
-  'before_title' => '',
-  'after_title' => ''
-));
-register_sidebar(array(
-  'name' => __( 'VietMoz Header - Banner sidebar' ),
-  'id' => 'header_sidebar',
-  'description' => __( 'Header - Banner widgets area.' ),
-  'before_title' => '',
-  'after_title' => ''
-));
-register_sidebar(array(
-  'name' => __( 'VietMoz Main menu' ),
-  'id' => 'main_menu',
-  'description' => __( 'Main menu area.' ),
-  'before_title' => '',
-  'after_title' => ''
-));
-register_sidebar(array(
-  'name' => __( 'VietMoz Main menu' ),
-  'id' => 'main_menu',
-  'description' => __( 'Main menu area.' ),
-  'before_title' => '',
-  'after_title' => ''
-));
-register_sidebar(array(
-  'name' => __( 'VietMoz Home Widget row 1' ),
-  'id' => 'home-1',
-  'description' => __( 'Home Widget row 1.' ),
-  'before_title' => '<h2>',
-  'after_title' => '</h2>'
-));
-register_sidebar(array(
-  'name' => __( 'VietMoz Home Widget row 2' ),
-  'id' => 'home-2',
-  'description' => __( 'Home Widget row 2.' ),
-  'before_title' => '<h2>',
-  'after_title' => '</h2>'
-));
-register_sidebar(array(
-  'name' => __( 'VietMoz Home Widget row 3' ),
-  'id' => 'home-3',
-  'description' => __( 'Home Widget row 3.' ),
-  'before_title' => '<h2>',
-  'after_title' => '</h2>'
-));
-register_sidebar(array(
-  'name' => __( 'VietMoz Home Widget row 4' ),
-  'id' => 'home-4',
-  'description' => __( 'Home Widget row 4.' ),
-  'before_title' => '<h2>',
-  'after_title' => '</h2>'
-));
-register_sidebar(array(
-  'name' => __( 'VietMoz Footer row 1' ),
-  'id' => 'footer_row_1',
-  'description' => __( 'Footer row 1.' ),
-  'before_title' => '',
-  'after_title' => ''
-));
-register_sidebar(array(
-  'name' => __( 'VietMoz Footer col 1' ),
-  'id' => 'footer_col_1',
-  'description' => __( 'Footer col 1.' ),
-  'before_title' => '<h3>',
-  'after_title' => '</h3>'
-));
-register_sidebar(array(
-  'name' => __( 'VietMoz Footer col 2' ),
-  'id' => 'footer_col_2',
-  'description' => __( 'Footer col 2.' ),
-  'before_title' => '<h3>',
-  'after_title' => '</h3>'
-));
-register_sidebar(array(
-  'name' => __( 'VietMoz Footer col 3' ),
-  'id' => 'footer_col_3',
-  'description' => __( 'Footer col 3.' ),
-  'before_title' => '<h3>',
-  'after_title' => '</h3>'
-));
-register_sidebar(array(
-  'name' => __( 'VietMoz Footer col 4' ),
-  'id' => 'footer_col_4',
-  'description' => __( 'Footer col 4.' ),
-  'before_title' => '<h3>',
-  'after_title' => '</h3>'
-));
-register_sidebar(array(
-  'name' => __( 'VietMoz Footer row 3' ),
-  'id' => 'footer_row_3',
-  'description' => __( 'Footer row 3.' ),
-  'before_title' => '',
-  'after_title' => ''
-));
 /**
 * Enqueue Script and Style
 */
 function vmzwp_enqueue() {
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
-	wp_enqueue_script( 'scripts', get_template_directory_uri().'/js/scripts.js', array(), 10012014, true );
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+  wp_enqueue_style( 'style', get_stylesheet_uri() );
+  wp_enqueue_script( 'scripts', get_template_directory_uri().'/js/scripts.js', array(), 10012014, true );
+  if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
 }
 function vmz_register_script()
 {
-	wp_register_script( 'js', get_template_directory_uri().'/inc/vmz.js', array('jquery','media-upload','thickbox') );  
-	
+  wp_register_script( 'js', get_template_directory_uri().'/inc/vmz.js', array('jquery','media-upload','thickbox') );  
+  
     wp_enqueue_media();  
     
-	wp_enqueue_script('jquery');  
+  wp_enqueue_script('jquery');  
 
-	wp_enqueue_script('thickbox');  
-	wp_enqueue_style('thickbox');  
+  wp_enqueue_script('thickbox');  
+  wp_enqueue_style('thickbox');  
 
-	wp_enqueue_script('media-upload');  
-	wp_enqueue_script('js');
+  wp_enqueue_script('media-upload');  
+  wp_enqueue_script('js');
 }
 add_action('admin_enqueue_scripts', 'vmz_register_script');
 

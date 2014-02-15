@@ -114,6 +114,11 @@ button, input[type="submit"] {
   outline: 0;
 }
 
+.wrap {
+  width: 1000px;
+  margin: 0 auto;
+}
+
 /* =Header */
 header {
   background: #ccc;
