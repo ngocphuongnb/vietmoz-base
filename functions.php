@@ -13,6 +13,7 @@
 */
 include 'inc/widgets/image/image.php';
 include 'inc/register_sidebars.php';
+include 'inc/theme-options.php';
  
 if (! function_exists('vmzwp_setup') ) :
   /*
