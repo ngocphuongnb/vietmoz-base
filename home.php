@@ -12,22 +12,22 @@ get_header(); ?>
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
 			<?php if ( is_active_sidebar( 'home-1' ) ) : ?>
-			<div id="home-widget row-1" class="widget-area">
+			<div class="home-widget row-1 widget-area">
 				<?php dynamic_sidebar( 'home-1' ); ?>
 			</div><!-- #home-widget row-1 -->
 			<?php endif; ?>
 			<?php if ( is_active_sidebar( 'home-2' ) ) : ?>
-			<div id="home-widget row-2" class="widget-area">
+			<div class="home-widget row-2 widget-area">
 				<?php dynamic_sidebar( 'home-2' ); ?>
 			</div><!-- #home-widget row-2 -->
 			<?php endif; ?>
 			<?php if ( is_active_sidebar( 'home-3' ) ) : ?>
-			<div id="home-widget row-3" class="widget-area">
+			<div class="home-widget row-3 widget-area">
 				<?php dynamic_sidebar( 'home-3' ); ?>
 			</div><!-- #home-widget row-3 -->
 			<?php endif; ?>
 			<?php if ( is_active_sidebar( 'home-4' ) ) : ?>
-			<div id="home-widget row-4" class="widget-area">
+			<div class="home-widget row-4 widget-area">
 				<?php dynamic_sidebar( 'home-4' ); ?>
 			</div><!-- #home-widget row-4 -->
 			<?php endif; ?>

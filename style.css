@@ -23,6 +23,35 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   vertical-align: baseline;
 }
 
+/* global box-sizing */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Clearing */
+.clear:before,
+.clear:after,
+[class*="content"]:before,
+[class*="content"]:after,
+[class*="site"]:before,
+[class*="site"]:after {
+  content: '';
+  display: table;
+}
+
+.clear:after,
+[class*="content"]:after,
+[class*="site"]:after {
+  clear: both;
+}
+
 html {
   overflow-y: scroll;
   /* Keeps page centered in all browsers regardless of content height */
@@ -41,7 +70,7 @@ html {
 }
 
 body {
-  background: #fafafa;
+  background: white;
 }
 
 article,
@@ -96,7 +125,7 @@ blockquote p {
 }
 
 a {
-  color: #0066cc;
+  color: #003399;
   text-decoration: none;
 }
 a:hover, a:active {
@@ -110,18 +139,51 @@ a img {
   border: 0;
 }
 
-button, input[type="submit"] {
+/* Images */
+.alignleft {
+  float: left;
+}
+
+.alignright {
+  float: right;
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+p {
+  text-align: justify;
+}
+
+button, input[type="submit"], input[type="search"] {
   outline: 0;
 }
 
+/* =Layout */
+#site-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .wrap {
-  width: 1000px;
+  width: 980px;
   margin: 0 auto;
 }
 
 /* =Header */
-header {
-  background: #ccc;
+header .header-sidebar {
+  text-align: right;
 }
 
 /* =Top nav */
@@ -133,49 +195,39 @@ header {
   float: left;
   width: 100%;
 }
-.main-nav ul {
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-}
+
 .main-nav li {
   float: left;
   position: relative;
 }
+
 .main-nav a {
   display: block;
   text-decoration: none;
 }
+
 .main-nav ul ul {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   display: none;
   float: left;
   position: absolute;
-    top: 1.5em;
-    left: 0;
+  left: 0;
   z-index: 99999;
 }
+
 .main-nav ul ul ul {
   left: 100%;
   top: 0;
 }
+
 .main-nav ul ul a {
   width: 200px;
 }
-.main-nav ul ul li {
-}
-.main-nav li:hover > a {
-}
-.main-nav ul ul :hover > a {
-}
-.main-nav ul ul a:hover {
-}
+
 .main-nav ul li:hover > ul {
   display: block;
 }
-.main-nav li.current_page_item a,
-.main-nav li.current-menu-item a {
-}
+
 /* =Main */
 /* =Sidebar */
 /* =Footer */

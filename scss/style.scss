@@ -11,27 +11,9 @@ Tags: light, white, one-column, two-columns, left-sidebar, right-sidebar, flexib
 This theme, like WordPress, is licensed under the GPL.
 */
 
-//------Define variables
-//---reset
-$wrap-width: 1000px;
-$font-stack: Helvetica, arial, sans-serif;
-$text-color: #222;
-$link-color: #0066cc;
-$bg-color: #fafafa;
-//------Mixin
-@mixin border-radius($border-radius: 5px) {
-  -webkit-border-radius: $border-radius;
-     -moz-border-radius: $border-radius;
-      -ms-border-radius: $border-radius;
-       -o-border-radius: $border-radius;
-          border-radius: $border-radius;
-}
-@mixin box-sizing($box-sizing: border-box) {
--webkit-box-sizing: $box-sizing;
--moz-box-sizing: $box-sizing;
-box-sizing: $box-sizing;
-}
-//------Start the magic
+// Include
+@import "functions.scss";
+@import "m_variables.scss";
 /* =reset */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
 	border: 0;
@@ -54,6 +36,22 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	-webkit-font-smoothing:antialiased;
 	font-smoothing:antialiased;
 	text-rendering:optimizeLegibility;
+}
+/* Clearing */
+.clear:before,
+.clear:after,
+[class*="content"]:before,
+[class*="content"]:after,
+[class*="site"]:before,
+[class*="site"]:after {
+	content: '';
+	display: table;
+}
+
+.clear:after,
+[class*="content"]:after,
+[class*="site"]:after {
+	clear: both;
 }
 html {
 	overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
@@ -126,22 +124,95 @@ a {
 		border: 0;
 	}
 }
-button, input[type="submit"]  {
+/* Images */
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+p {
+	text-align: justify;
+}
+button, input[type="submit"], input[type="search"] {
 	outline: 0;
 }
+/* =Layout */
+#site-container {
+	width: $container;
+	margin: 0 auto;
+}
 .wrap {
-	width: $wrap-width;
+	width: $wrap;
 	margin: 0 auto;
 }
 /* =Header */
 header {
-	background: #ccc;
+	.header-sidebar {
+		text-align: right;
+	}
 }
 /* =Top nav */
 /* =Logo */
 /* =Menu */
+.main-nav {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
+}
+.main-nav li {
+	float: left;
+	position: relative;
+}
+.main-nav a {
+	display: block;
+	text-decoration: none;
+}
+.main-nav ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	display: none;
+	float: left;
+	position: absolute;
+	left: 0;
+	z-index: 99999;
+}
+.main-nav ul ul ul {
+	left: 100%;
+	top: 0;
+}
+.main-nav ul ul a {
+	width: 200px;
+}
+.main-nav ul ul li {
+}
+.main-nav li:hover > a {
+}
+.main-nav ul ul :hover > a {
+}
+.main-nav ul ul a:hover {
+}
+.main-nav ul li:hover > ul {
+	display: block;
+}
+.main-nav li.current_page_item a,
+.main-nav li.current-menu-item a {
+}
 /* =Main */
 /* =Sidebar */
+.widget-area .widget > div, .widget-area .widget > form {
+}
 /* =Footer */
 /* =Footer 1st row */
 /* =Footer col */
