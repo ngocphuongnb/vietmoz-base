@@ -16,6 +16,7 @@
 <![endif]-->
 <!--[if !(IE 7) | !(IE 8)  ]><!-->
 <html <?php language_attributes(); ?>>
+<!--<![endif]-->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width" />
@@ -27,12 +28,14 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
+	<?php $vmzops = get_option( 'vmzoptions' ); ?>
 </head>
 <body <?php body_class(); ?>>
-<header id="masthead" role="banner">
+<div id="site-container">
+<header id="masthead" role="banner" class="clear">
     <?php if ( is_active_sidebar( 'top_nav_left' ) || is_active_sidebar( 'top_nav_right' ) ) : ?>
 	<div id="site-top-nav">
-		<div class="wrap">
+		<div class="wrap clear">
             <?php if ( is_active_sidebar( 'top_nav_left' ) ) : ?>
 			<div class="left top-nav">
 				<?php dynamic_sidebar( 'top_nav_left' ); ?>
@@ -45,13 +48,14 @@
             <?php endif; ?>
 		</div><!-- .wrap -->
 	</div><!-- #top-nav -->
+	<div class="clear"></div>
     <?php endif; ?>
 	<div id="site-header">
-		<div class="wrap">
+		<div class="wrap clear">
 			<div class="logo left">
 				<h1 class="site-title">
 					<a href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-						<?php //display logo as option ?>
+						<img src="<?php echo $vmzops['logo']; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 					</a>
 				</h1>
 				<?php if($vmzData['site_slogan']): ?>
@@ -67,13 +71,13 @@
 	        <?php endif; ?>
 	    </div><!-- .wrap -->
 	</div><!-- #masthead -->
-    <?php if ( is_active_sidebar( 'main_menu' ) ) : ?>
+	<div class="clear"></div>
 	<nav id="site-nav" class="main-nav">
-		<div class="wrap">
-			<?php dynamic_sidebar('main_menu'); ?>
+		<div class="wrap clear">
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 		</div><!-- .wrap -->
 	</nav><!-- #site-nav.main-nav -->
-    <?php endif; ?>
 </header><!-- #site-header -->
+<div class="clear"></div>
 <main>
 	<div class="wrap">
