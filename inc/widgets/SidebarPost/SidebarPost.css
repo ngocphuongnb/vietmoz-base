@@ -1,0 +1,21 @@
+.wrap-sidebar-post li{
+    list-style:none;
+}
+
+.wrap-sidebar-post {
+    margin-bottom: 15px;
+}
+
+.wrap-sidebar-post .content {
+    padding: 10px;
+    border-top: 0px!important;
+    border: 1px solid rgba(221, 221, 221,0);
+}
+.wrap-sidebar-post img{
+    width: 70px;
+    height: 70px;
+    border: 1px solid #D5D5D5;
+    margin-bottom: 5px;
+    margin: 0 10px 10px 0;
+    float:left;
+}
